@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.properties.projectCompileSdkVersion
+    buildToolsVersion project.properties.projectBuildToolsVersion
+}
+
+dependencies {
+    compile project(':Zxing')
+    compile project(':CSAndroid')
+}

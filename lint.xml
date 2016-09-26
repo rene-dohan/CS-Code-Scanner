@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="ContentDescription" severity="ignore" />
+    <issue id="Deprecated" severity="ignore" />
+    <issue id="HardcodedText" severity="ignore" />
+    <issue id="MergeRootFrame" severity="ignore" />
+    <issue id="MissingTranslation" severity="ignore" />
+    <issue id="UnusedResources">
+        <ignore path="res/values/color.xml" />
+    </issue>
+    <issue id="UseCompoundDrawables" severity="ignore" />
+    <issue id="UselessParent" severity="ignore">
+        <ignore path="res/layout/status_item_add_comment_dialog.xml" />
+    </issue>
+</lint>
