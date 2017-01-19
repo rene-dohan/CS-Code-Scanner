@@ -16,13 +16,13 @@ import java.io.IOException;
 import java.util.Collection;
 
 import cs.android.viewbase.CSViewController;
-import cs.android.viewbase.OnKeyDownResult;
+import cs.android.viewbase.CSOnKeyDownResult;
 import cs.codescanner.CaptureController;
 import cs.codescanner.R;
 import cs.codescanner.scanner.camera.CameraManager;
 import cs.java.collections.CSList;
 
-import static cs.java.lang.Lang.*;
+import static cs.java.lang.CSLang.*;
 
 public class CaptureMainController extends CSViewController implements SurfaceHolder.Callback {
 
@@ -76,7 +76,7 @@ public class CaptureMainController extends CSViewController implements SurfaceHo
         inactivityTimer.shutdown();
     }
 
-    public void onKeyDown(OnKeyDownResult onKeyDown) {
+    public void onKeyDown(CSOnKeyDownResult onKeyDown) {
         super.onKeyDown(onKeyDown);
         if (onKeyDown._keyCode == KeyEvent.KEYCODE_BACK) {
             if (_lastResult != null) {
@@ -106,7 +106,7 @@ public class CaptureMainController extends CSViewController implements SurfaceHo
     }
 
     public void onResume() {
-        cameraManager = new CameraManager(activity());
+        cameraManager = new CameraManager(this);
 
         viewfinderView = (ViewfinderView) findView(R.id.viewfinder_view);
         viewfinderView.setCameraManager(cameraManager);

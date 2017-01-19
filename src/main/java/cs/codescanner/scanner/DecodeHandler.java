@@ -1,6 +1,6 @@
 package cs.codescanner.scanner;
 
-import static cs.java.lang.Lang.is;
+import static cs.java.lang.CSLang.is;
 
 import java.util.Map;
 

@@ -1,6 +1,6 @@
 package cs.codescanner.scanner;
 
-import static cs.java.lang.Lang.info;
+import static cs.java.lang.CSLang.info;
 
 import java.util.Collection;
 

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.WindowManager.LayoutParams;
 
 import cs.android.viewbase.CSViewController;
-import cs.android.viewbase.LayoutId;
+import cs.android.viewbase.CSLayoutId;
 import cs.codescanner.scanner.CaptureMainController;
 
 public abstract class CaptureController extends CSViewController {
@@ -24,7 +24,7 @@ public abstract class CaptureController extends CSViewController {
     };
     private int _requestedOrientationBefore;
 
-    public CaptureController(CSViewController parent, LayoutId layout) {
+    public CaptureController(CSViewController parent, CSLayoutId layout) {
         super(parent, layout);
     }
 

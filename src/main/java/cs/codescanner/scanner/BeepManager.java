@@ -1,6 +1,6 @@
 package cs.codescanner.scanner;
 
-import static cs.java.lang.Lang.error;
+import static cs.java.lang.CSLang.error;
 
 import java.io.IOException;
 

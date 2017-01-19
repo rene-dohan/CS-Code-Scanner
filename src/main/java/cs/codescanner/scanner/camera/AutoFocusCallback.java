@@ -1,6 +1,6 @@
 package cs.codescanner.scanner.camera;
 
-import static cs.java.lang.Lang.info;
+import static cs.java.lang.CSLang.info;
 import android.hardware.Camera;
 import android.os.Handler;
 import android.os.Message;
