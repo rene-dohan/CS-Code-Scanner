@@ -11,9 +11,11 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Vibrator;
+
+import cs.android.viewbase.CSContextController;
 import cs.codescanner.R;
 
-final class BeepManager {
+final class BeepManager extends CSContextController {
 
 	private static final float BEEP_VOLUME = 0.10f;
 	private static final long VIBRATE_DURATION = 200L;
@@ -45,6 +47,7 @@ final class BeepManager {
 	private boolean vibrate;
 
 	BeepManager(Activity activity) {
+		super(activity);
 		this.activity = activity;
 		mediaPlayer = null;
 		updatePrefs();
@@ -52,10 +55,7 @@ final class BeepManager {
 
 	void playBeepSoundAndVibrate() {
 		if (playBeep && mediaPlayer != null) mediaPlayer.start();
-		if (vibrate) {
-			Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
-			vibrator.vibrate(VIBRATE_DURATION);
-		}
+		if (vibrate) service(Context.VIBRATOR_SERVICE, Vibrator.class).vibrate(VIBRATE_DURATION);
 	}
 
 	void updatePrefs() {
