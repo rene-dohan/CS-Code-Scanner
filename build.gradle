@@ -3,6 +3,10 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion project.properties.projectCompileSdkVersion
     buildToolsVersion project.properties.projectBuildToolsVersion
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
