@@ -16,8 +16,6 @@ public abstract class CaptureController extends CSViewController {
             CaptureController.this.onDecodeDone();
         }
 
-        ;
-
         @Override
         protected void onFrameworkBug() {
         }

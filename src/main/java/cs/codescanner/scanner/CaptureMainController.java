@@ -15,14 +15,16 @@ import com.google.zxing.Result;
 import java.io.IOException;
 import java.util.Collection;
 
-import cs.android.viewbase.CSViewController;
 import cs.android.viewbase.CSOnKeyDownResult;
+import cs.android.viewbase.CSViewController;
 import cs.codescanner.CaptureController;
 import cs.codescanner.R;
 import cs.codescanner.scanner.camera.CameraManager;
 import cs.java.collections.CSList;
 
-import static cs.java.lang.CSLang.*;
+import static cs.java.lang.CSLang.error;
+import static cs.java.lang.CSLang.info;
+import static cs.java.lang.CSLang.list;
 
 public class CaptureMainController extends CSViewController implements SurfaceHolder.Callback {
 
@@ -106,6 +108,7 @@ public class CaptureMainController extends CSViewController implements SurfaceHo
     }
 
     public void onResume() {
+        super.onResume();
         cameraManager = new CameraManager(this);
 
         viewfinderView = (ViewfinderView) findView(R.id.viewfinder_view);

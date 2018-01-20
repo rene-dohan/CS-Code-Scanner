@@ -10,7 +10,6 @@ import android.view.SurfaceHolder;
 
 import java.io.IOException;
 
-import cs.android.viewbase.CSViewController;
 import cs.codescanner.scanner.CaptureMainController;
 import cs.codescanner.scanner.PlanarYUVLuminanceSource;
 
@@ -31,15 +30,6 @@ public final class CameraManager {
     private static final int MAX_FRAME_HEIGHT = 400;
 
     private final CameraConfigurationManager _configManager;
-    private final CSViewController _controller;
-    private Camera _camera;
-    private Rect _framingRect;
-    private Rect _framingRectInPreview;
-    private boolean _initialized;
-    private boolean _previewing;
-    private boolean _reverseImage;
-    private int _requestedFramingRectWidth;
-    private int _requestedFramingRectHeight;
     /**
      * Preview frames are delivered here, which we pass on to the registered
      * handler. Make sure to clear the handler so it will only receive one
@@ -51,9 +41,16 @@ public final class CameraManager {
      * requested them.
      */
     private final AutoFocusCallback autoFocusCallback;
+    private Camera _camera;
+    private Rect _framingRect;
+    private Rect _framingRectInPreview;
+    private boolean _initialized;
+    private boolean _previewing;
+    private boolean _reverseImage;
+    private int _requestedFramingRectWidth;
+    private int _requestedFramingRectHeight;
 
     public CameraManager(CaptureMainController controller) {
-        _controller = controller;
         _configManager = new CameraConfigurationManager(controller);
         previewCallback = new PreviewCallback(_configManager);
         autoFocusCallback = new AutoFocusCallback();
