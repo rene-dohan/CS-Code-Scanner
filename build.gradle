@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion project.properties.projectCompileSdkVersion
-    buildToolsVersion project.properties.projectBuildToolsVersion
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -10,6 +9,6 @@ android {
 }
 
 dependencies {
-    compile project(':Zxing')
-    compile project(':CSAndroid')
+    api project(':Zxing')
+    implementation project(':CSAndroid')
 }
